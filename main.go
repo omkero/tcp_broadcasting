@@ -62,7 +62,7 @@ func handleConnection(conn net.Conn) {
 		msg := string(buffer[:n])
 		fmt.Printf("received from client %s: %s \n", conn.RemoteAddr().String(), msg)
 
-		brodcast(conn, msg)
+		broadcast(conn, msg)
 	}
 
 	mutex.Lock()
@@ -71,7 +71,7 @@ func handleConnection(conn net.Conn) {
 
 	discMsg := fmt.Sprintf("client %s has disconnected \n", conn.RemoteAddr().String())
 	fmt.Print(discMsg)
-	brodcast(conn, discMsg)
+	broadcast(conn, discMsg)
 }
 
 func tcpServer() {
