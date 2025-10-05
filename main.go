@@ -136,7 +136,7 @@ func tcpClient(ipv4 string) {
 
 }
 
-func brodcast(sender net.Conn, msg string) {
+func broadcast(sender net.Conn, msg string) {
 	mutex.Lock()
 	defer mutex.Unlock()
 
